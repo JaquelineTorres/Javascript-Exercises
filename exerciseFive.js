@@ -16,10 +16,11 @@ At the end of the exercise, there should be 4 people in the array.
 let people = ["Maria", "Dani", "Luis", "Juan", "Camila"];
 
 //Write a command that prints out all of the people in the list.
-
+console.log("1. All people:");
 for (let i = 0; i < people.length; i++) {
     console.log(`${i + 1}. ${people[i]}`)
 };
+console.log(people);
 
 /*
 
@@ -28,34 +29,43 @@ El método splice() cambia el contenido de un array eliminando elementos existen
 
 */
 
-const removePeople = (array, people) => {
+const removePerson = (array, people) => {
     const index = array.indexOf(people);
     if (index !== -1) {
         array.splice(index, 1);
     }
     return array;
 };
-
-console.log(removePeople(people, "Dani"));
+console.log("2. After removing Dani:");
+console.log(removePerson(people, "Dani"));
 
 //Write the command to remove "Juan" from the array.
-console.log(removePeople(people, "Juan"));
+console.log("3. After removing Juan:");
+console.log(removePerson(people, "Juan"));
 
 //Write the command to move "Luis" to the front of the array.
-
-console.log(removePeople(people, "Luis"));
+console.log("4. After moving Luis to the front:");
+people.slice(people.indexOf("Luis"),1);
+console.log(people);
 
 //Write the command to add your name to the end of the array.
+console.log("5. After adding my name to the end:");
 const addMyName = people.push("Jaque");
 //console.log(addMyName);
 console.log(people);
 
 //Using a loop, iterate through this array and after console.log "Maria", exit from the loop.
-for ( let i = 0; i < people.length; i++){
-    if(people[i] === "Maria"){
-        console.log("Hola");
+console.log("6. Loop and print until Maria:");
+for (let i = 0; i < people.length; i++) {
+    console.log(people[i]);
+    if (people[i] === "Maria") {
         break;
-    }else{
-        console.log(people[i]);
     }
 };
+
+//Write the command that gives the indexOf where "Maria" is located.
+console.log("7. Index of Maria:");
+console.log(people.indexOf("Maria"));
+
+console.log("Final state of the array (4 people):");
+console.log(people);
