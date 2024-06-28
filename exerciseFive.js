@@ -46,6 +46,7 @@ console.log(removePerson(people, "Juan"));
 //Write the command to move "Luis" to the front of the array.
 console.log("4. After moving Luis to the front:");
 people.slice(people.indexOf("Luis"),1);
+people.unshift("Luis");
 console.log(people);
 
 //Write the command to add your name to the end of the array.
